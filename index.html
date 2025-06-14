@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Assignment-2</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header id="header">
+            <input id="input" type="text" placeholder="Type here" />
+            <button id="serch-btn" class="serch-btn" type="submit">
+                Search
+            </button>
+        </header>
+        <section class="container" id="container">
+            <div class="left-container" id="left-container"></div>
+            <div class="right-container" id="right-container">
+                <div id="total-cart">
+                    <h2 style="padding-top: 10px; padding-bottom: 15px">
+                        Total Cart:
+                    </h2>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sl</th>
+                                <th>Img</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-tbody">
+                            <!-- Cart items  -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- The Modal -->
+        <div id="myModal" class="modal"></div>
+
+        <!-- script -->
+        <script src="script.js"></script>
+    </body>
+</html>
