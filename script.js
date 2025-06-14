@@ -59,7 +59,7 @@ function addToCart(dataId) {
         const totaCart = document.getElementById("total-cart");
         totaCart.innerHTML = `
         <h2 style="padding-top: 10px; padding-bottom: 15px">
-                        Total Cart: ${cartItems.length}
+                        Total Count: ${cartItems.length}
                     </h2>
         `;
     }
