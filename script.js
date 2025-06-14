@@ -14,7 +14,7 @@ function onLoading() {
 function displayData(data) {
     const leftContainer = document.getElementById("left-container");
     leftContainer.innerHTML = "";
-
+    console.log(data);
     if (!data) {
         leftContainer.innerHTML = `
         <h1 class="notFound">RESULT NOT FOUND</h1>
@@ -22,9 +22,7 @@ function displayData(data) {
         return;
     }
 
-    for (const d of dArray) {
-        // console.log(d);
-
+    for (const d of data) {
         const card = document.createElement("div");
         card.classList.add("card");
         card.innerHTML = `
@@ -32,7 +30,7 @@ function displayData(data) {
             src="${d.strDrinkThumb}"
             class="card-img"/>
                     <div class="card-body">
-                        <h4>Name: ${d.strGlass}</h4>
+                        <h4>Name: ${d.strDrink}</h4>
                         <p><b>Category:</b> <small>${d.strCategory}</small></p>
                         <p class="text-ellipsis"><b>Instruction:</b> <small>${d.strInstructions}</small></p>
                         <span class="card-btns"
@@ -123,17 +121,18 @@ function singleCardDetails(data) {
 }
 // search section
 document.getElementById("serch-btn").addEventListener("click", () => {
-    console.log("button");
+    // console.log("button");
+
     const searchField = document.getElementById("input");
     const inputValue = searchField.value.trim();
+    console.log(inputValue);
     if (inputValue) {
         const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputValue}`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => displayData(data.drinks));
-
-        searchField.value = "";
     }
+    searchField.value = "";
 });
 
 onLoading();
